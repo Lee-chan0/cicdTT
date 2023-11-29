@@ -32,7 +32,7 @@ jobs:
       run: npm -v
 
     - name: create env file
-      working-directory: ../
+      working-directory: ./
       run: |
         pwd
         touch .env
