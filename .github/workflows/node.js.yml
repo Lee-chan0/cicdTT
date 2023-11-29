@@ -32,11 +32,12 @@ jobs:
       run: npm -v
 
     - name: create env file
+      working-directory: ./
       run: |
-        echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> /home/ubuntu/firstCICD/.env
-
-    - name: envFile
-      run: cat /home/ubuntu/firstCICD/.env
+        pwd
+        touch .env
+        echo DATABASE_URL=${{ secrets.DATABASE_URL }} >> .env
+        cat .env
    
     - name: build server file
       working-directory: ./
